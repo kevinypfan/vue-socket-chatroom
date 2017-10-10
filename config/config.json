@@ -1,0 +1,12 @@
+{
+  "development": {
+    "PORT": "8000",
+    "MONGODB": "ProfileAppDev",
+    "JWT": "abc123"
+  },
+  "product": {
+    "PORT": "3000",
+    "MONGODB": "ProfileAppProd",
+    "JWT": "qweqasgtrgjto"
+  }
+}
