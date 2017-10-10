@@ -32,7 +32,7 @@ export default {
   }
   .context {
     color: #333;
-    background-color: #B9EDF8;
+    background-color: #F2BDD0;
     border-radius: 6px;
     padding: 4px 8px;
     word-break: break-all;

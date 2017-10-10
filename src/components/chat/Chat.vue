@@ -1,10 +1,18 @@
 <template>
   <div class="chatRoom">
     <div class="message-text">
-      <app-message
-        v-for="m in messages"
-        :message="m"
-        ></app-message>
+      <div v-for="m in messages">
+        <app-message
+            :message="m"
+            v-if="m.from === 'kevin'"
+          >
+          </app-message>
+          <app-me
+            :message="m"
+            v-if="m.from !== 'kevin'"
+          >
+          </app-me>
+      </div>
     </div>
 
     <div class="form-back">
@@ -18,6 +26,7 @@
 
 <script>
 import Message from './Message.vue'
+import Me from './Me.vue'
 export default {
   data () {
     return {
@@ -47,7 +56,8 @@ export default {
     }
   },
   components: {
-    appMessage: Message
+    appMessage: Message,
+    appMe: Me
   },
   methods: {
     sendMessage() {
@@ -64,13 +74,12 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .chatRoom {
-  position: relative;
+  padding-bottom: 30px;
 }
 .message-text {
   width: 100%;
-  height: 300px;
 }
 ol {
   list-style: none;
@@ -87,10 +96,11 @@ ol {
   -ms-align-items: ceter;
   align-items: ceter;
   justify-content: center;
-  background-color: #24f;
+  background-color: #16335F;
   input {
     margin-top: 8px;
     padding: 5px;
+    width: 500px;
   }
 }
 </style>
