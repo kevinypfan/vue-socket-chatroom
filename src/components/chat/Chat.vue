@@ -4,12 +4,12 @@
       <div v-for="m in messages">
         <app-message
             :message="m"
-            v-if="m.from === 'kevin'"
+            v-if="m.from !== $store.state.user.name"
           >
           </app-message>
           <app-me
             :message="m"
-            v-if="m.from !== 'kevin'"
+            v-if="m.from == $store.state.user.name"
           >
           </app-me>
       </div>
@@ -37,22 +37,11 @@ export default {
     }
   },
   sockets: {
-    connect() {
-      console.log('user connect')
-    },
-    disconnect() {
-      console.log('disconnected from server')
-    },
     newMessage(message) {
       console.log(message)
       var timeStamp = this.$moment(message.createdAt).format('h:mm a')
       message.time = timeStamp;
       this.messages.push(message)
-    },
-    systemMessage(message) {
-      var timeStamp = this.$moment(message.createdAt).format('h:mm a')
-      message.time = timeStamp;
-      this.system.push(message)
     }
   },
   components: {

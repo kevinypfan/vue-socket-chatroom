@@ -5,6 +5,7 @@
     </div>
     <div class="chatArea">
       <app-chat></app-chat>
+      <div class="white-space"></div>
     </div>
     <div class="system">
       <app-system></app-system>
@@ -28,6 +29,14 @@ export default {
     ...mapGetters([
       'getUsers'
     ])
+  },
+  sockets: {
+    connect() {
+      console.log('user connect')
+    },
+    disconnect() {
+      console.log('disconnected from server')
+    }
   }
 }
 </script>
@@ -44,8 +53,12 @@ export default {
       position: fixed;
     }
     .chatArea {
-      width: 50%;
+      width: 43%;
       margin: 0 30% 0 20%;
+      .white-space {
+        height: 30px;
+        width: 100%;
+      }
     }
     .system {
       width: 30%;

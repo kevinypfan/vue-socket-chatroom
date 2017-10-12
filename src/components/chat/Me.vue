@@ -1,8 +1,8 @@
 <template lang="html" v-if="false">
-  <div class="message">
+  <div class="message" align="right">
     <div class="name">
-      {{message.from}} :
       <span class="timeStamp">{{message.time}}</span>
+      : {{message.from}}
     </div>
     <div class="context">
       {{message.text}}
@@ -21,13 +21,15 @@ export default {
 <style lang="scss" scoped>
 .message {
   width: 100%;
+  float: right;
   .name {
-    color: #1F6ED4;
+    color: #F71E35;
     padding: 10px;
+
     .timeStamp {
       font-size: 10px;
       color: #999;
-      margin-left: 10px;
+      margin-right: 10px;
     }
   }
   .context {
@@ -36,7 +38,8 @@ export default {
     border-radius: 6px;
     padding: 4px 8px;
     word-break: break-all;
-    width: 300px
+    max-width: 200px;
+    text-align: left;
   }
 }
 </style>

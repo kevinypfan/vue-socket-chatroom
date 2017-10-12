@@ -36,7 +36,7 @@ export default {
     border-radius: 6px;
     padding: 4px 8px;
     word-break: break-all;
-    width: 300px
+    max-width: 200px
   }
 }
 </style>
